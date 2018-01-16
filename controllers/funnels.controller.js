@@ -8,7 +8,7 @@ const readline = require('readline'),
 
 const config = require('../config/funnels.config');
 
-async function cli(token) {
+function cli(token) {
   if (!token) {
     console.log('TOKEN NOT FOUND. ABORTING...');
     return;
@@ -44,7 +44,7 @@ async function cli(token) {
         rl.close();
 
         if (model.landing_page_sheetid) {
-          
+
           // grabSheet(token, model, true)
           //   .then( data => {
           //     const index = findColumnIndexes(data[0], model.language);
@@ -63,14 +63,14 @@ async function cli(token) {
             .then(data => {
               const lpIndex = findColumnIndexes(data[0][0], model.language);
               const funnelIndex = findColumnIndexes(data[1][0], model.language);
-              
+
               const lpStrings = replacePageStrings(model, data[0], lpIndex);
               const funnelStrings = buildFunnelStrings(model, data[1], funnelIndex);
               saveStringsFile(model, lpStrings, funnelStrings);
             })
             .catch(err => console.log(err));
         }
-        
+
         // grabSheet(token, model)
         //   .then( data => {
         //     const index = findColumnIndexes(data[0], model.language);
@@ -78,7 +78,7 @@ async function cli(token) {
         //   })
         //   .catch(err => console.log(err));
 
-        
+
       });
   });
 }
@@ -112,7 +112,7 @@ function grabSheet(auth, model, isLandingPage) {
     });
 
   });
-  
+
   /*
   if(model.funnel_sheetid) {
     sheets.spreadsheets.values.get({
@@ -152,7 +152,7 @@ function buildFunnelStrings(model, rows, index) {
     type: 'radio-click',
     validators: ['required'],
     question: '',
-    answers: []    
+    answers: []
   };
   let personalField = {
     name: '',
@@ -161,10 +161,10 @@ function buildFunnelStrings(model, rows, index) {
     error_message: '',
     validators: []
   };
-  
+
   let currStep, newStep, currName, newName;
   for (let i = 1; i < rows.length; i++) {
-    
+
     let section = /step/.test(rows[i][index.section]) ? 'step' : rows[i][index.section];
 
     //console.log(rows[i][index.section] + ' is step? ' + /step/.test(rows[i][index.section]));
@@ -208,7 +208,7 @@ function buildFunnelStrings(model, rows, index) {
          step.tos = rows[i][index.language];
          currName = 'End of fields!';
          break;
-      
+
       case 'personal_information':
         // Save the last step before personal information
         funnel.push(Object.assign({}, step));
@@ -232,16 +232,16 @@ function buildFunnelStrings(model, rows, index) {
       step.fields.push(Object.assign({}, personalField));
       personalField.validators = [];
       newName = currName;
-   
+
     } else if (currName) {
       personalField.name = rows[i][index.language];
     }
-    
+
     if( newStep !== currStep || i === rows.length - 1) {
       funnel.push(Object.assign({}, step));
       step.answers = [];
       newStep = currStep;
-    } 
+    }
   }
   return {funnel_name, funnel}
 }
@@ -296,7 +296,7 @@ function loadModelFile(jsFilePath, model) {
   }
   // Store the variable name defined in the ts file
   model.var_name = key;
-  
+
   // if ('funnel' in file[key]) { delete file[key].funnel; }
   // if ('funnel_name' in file[key]) { delete file[key].funnel_name; }
   return file[key];
@@ -307,7 +307,7 @@ function findRowsInterval(col, rows) {
   let section = {};
 
   for (let i = 1; i < rows.length; i++) {
-    
+
     if(rows[i][col] && !section.key) {
       section.key = rows[i][col];
       section.start = i;
@@ -363,11 +363,11 @@ function traverseAndReplace(section, strings, counter = 0) {
 
 function saveStringsFile(model, lpStrings, funnelStrings ) {
   if(funnelStrings) {
-    console.log('#############################################################################'); 
+    console.log('#############################################################################');
     lpStrings.funnel = funnelStrings.funnel;
     lpStrings.funnel_name = funnelStrings.funnel_name;
   }
-  
+
   fs.writeFileSync(model.target_file, `export const ${model.var_name} = ${JSON.stringify(lpStrings, null, 2)};`);
   console.log(`Strings file saved to ${model.target_file}`);
   loadAdditionalOptions(model);
