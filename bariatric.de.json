@@ -1,0 +1,380 @@
+[
+        {
+            "hero_banner": {
+                "headline": "strId_2",
+                "values": [
+                    {
+                        "title": "strId_3",
+                        "description": "strId_4"
+                    },
+                    {
+                        "title": "strId_5",
+                        "description": "strId_6"
+                    },
+                    {
+                        "title": "strId_7",
+                        "description": "strId_8"
+                    }
+                ],
+                "button_mobile": "strId_9",
+                "funnel": { 
+                    "name": "anthropometry",
+                    "type": "form_hero",
+                    "headline": "strId_10",
+                    "subtitle": "strId_11",
+                    "questions": [
+                        {
+                            "name": "height",
+                            "type": "text",
+                            "subtype": "number",
+                            "validators": null,
+                            "question": "strId_12",
+                            "unit_values": ["cm", "in"],
+                            "default_unit": "cm",
+                            "error_message": "strId_13"
+                        },
+                        {
+                            "name": "weight",
+                            "type": "text",
+                            "subtype": "number",
+                            "validators": null,
+                            "question": "strId_14",
+                            "unit_values": ["kg", "lb"],
+                            "default_unit": "kg",
+                            "error_message": "strId_15"
+                        },
+                        {
+                            "name": "target_weight",
+                            "type": "text",
+                            "subtype": "number",
+                            "validators": null,
+                            "question": "strId_16",
+                            "unit_values": ["kg", "lb"],
+                            "default_unit": "kg",
+                            "error_message": "strId_17"
+                        }
+                    ],
+                    "button_value": "strId_18"
+                }
+            }
+        },
+        {
+            "how_it_works": {
+                "values": [
+                    {
+                        "title": "strId_19",
+                        "text": "strId_20"
+                    },
+                    {
+                        "title": "strId_21",
+                        "text": "strId_22"
+                    },
+                    {
+                        "title": "strId_23",
+                        "text": "strId_24"
+                    }
+                ]
+            }
+        },
+        {
+            "funnel": {            
+                "values": [
+                    {
+                        "title": "strId_25",
+                        "text": "strId_26"
+                    }
+                ]
+            }
+        },
+        { 
+            "name": "anthropometry",
+            "label": "strId_27",
+            "field": "step",
+            "questions": [
+                {
+                    "name": "height",
+                    "type": "text",
+                    "subtype": "number",
+                    "validators": ["required"],
+                    "question": "strId_28",
+                    "unit_values": ["cm", "in"],
+                    "default_unit": "cm",
+                    "error_message": "strId_29"
+                },
+                {
+                    "name": "height_unit",
+                    "type": "select",
+                    "multiple": false,
+                    "validators": ["required"],
+                    "default": "cm",
+                    "answers": [ "cm", "in" ]
+                },
+                {
+                    "name": "weight",
+                    "type": "text",
+                    "subtype": "number",
+                    "validators": ["required"],
+                    "question": "strId_30",
+                    "unit_values": ["kg", "lb"],
+                    "default_unit": "kg",
+                    "error_message": "strId_31"
+                },
+                {
+                    "name": "weight_unit",
+                    "type": "select",
+                    "multiple": false,
+                    "validators": ["required"],
+                    "default": "kg",
+                    "answers": [ "kg", "lb" ]
+                },
+                {
+                    "name": "target_weight",
+                    "type": "text",
+                    "subtype": "number",
+                    "validators": ["required"],
+                    "question": "strId_32",
+                    "unit_values": ["kg", "lb"],
+                    "default_unit": "kg",
+                    "error_message": "strId_33"
+                },
+                {
+                    "name": "target_weight_unit",
+                    "type": "select",
+                    "multiple": false,
+                    "validators": ["required"],
+                    "default": "kg",
+                    "answers": [ "kg", "lb" ]
+                },
+                {
+                    "type": "button",
+                    "subtype": "button",
+                    "style": "mat-raised-button",
+                    "color": "primary",
+                    "value": "strId_34",
+                    "modifier_class": "full-width marginTopSmall"
+                }
+            ]
+        },
+        {   
+            "field": "step",
+            "name": "how_long_overweight",
+            "type": "radio",
+            "validators": ["required"],
+            "question": "strId_35",
+            "answers": [
+                "strId_36",
+                "strId_37",
+                "strId_38",
+                "strId_39"
+            ]
+        },
+        {   
+            "field": "step",
+            "name": "procedures",
+            "type": "radio",
+            "validators": ["required"],
+            "question": "strId_40",
+            "answers": [
+                "strId_41",
+                "strId_42",
+                "strId_43"
+            ]
+        },
+        {
+            "field": "step",
+            "name": "other_methods",
+            "type": "radio",
+            "validators": ["required"],
+            "question": "strId_44",
+            "answers": [
+                "strId_45",
+                "strId_46",
+                "strId_47",
+                "strId_48"
+            ]
+        },
+        {
+            "field": "step",
+            "name": "discussed_with_doctor",
+            "type": "radio",
+            "validators": ["required"] ,
+            "question": "strId_49",
+            "answers": [
+                "strId_50",
+                "strId_51"
+            ]
+        },
+        {   
+            "field": "step",
+            "name": "familial_history",
+            "type": "radio",
+            "validators": ["required"],
+            "question": "strId_52",
+            "answers": [
+                "strId_53",
+                "strId_54"
+            ]
+        },
+        {   
+            "field": "step",
+            "name": "snacker",
+            "type": "radio",
+            "validators": ["required"],
+            "question": "strId_55",
+            "answers": [
+                "strId_56",
+                "strId_57"
+            ]
+        },
+        {   
+            "field": "step",
+            "name": "volume_eater",
+            "type": "radio",
+            "validators": ["required"],
+            "question": "strId_58",
+            "answers": [
+                "strId_59",
+                "strId_60"
+            ]
+        },
+        {   
+            "field": "step",
+            "name": "more_important",
+            "type": "radio",
+            "validators": ["required"],
+            "question": "strId_61",
+            "answers": [
+                "strId_62",
+                "strId_63",
+                "strId_64",
+                "strId_65"
+            ]
+        },
+        {   
+            "field": "step",
+            "name": "comorbidities",
+            "type": "select",
+            "multiple": true,
+            "validators": ["required"],
+            "placeholder": "strId_66",
+            "question": "strId_67",
+            "answers": [
+                "strId_68",
+                "strId_69",
+                "strId_70",
+                "strId_71",
+                "strId_72",
+                "strId_73"
+            ],
+            "error_message": "strId_74"
+        },
+        {   
+            "field": "step",
+            "name": "insurance",
+            "type": "radio",
+            "validators": ["required"],
+            "question": "strId_75",
+            "answers": [
+                "strId_76",
+                "strId_77",
+                "strId_78",
+                "strId_79"
+            ]
+        },
+        {   
+            "field": "step",
+            "name": "gender",
+            "type": "radio",
+            "validators": ["required"],
+            "question": "strId_80",
+            "answers": [
+                "strId_81",
+                "strId_82"
+            ]
+        },
+        {
+            "field": "step",
+            "name": "age",
+            "type": "radio",
+            "validators": ["required"],
+            "question": "strId_83",
+            "answers": [
+                "strId_84",
+                "strId_85",
+                "strId_86",
+                "strId_87",
+                "strId_88"
+            ]
+        },
+        {   
+            "field": "step",
+            "name": "personal_information",
+            "label": "strId_89",
+            "headline": "strId_90",
+            "questions": [{
+                    "name": "first_name",
+                    "type": "text",
+                    "validators": ["required"],
+                    "question": "strId_91",
+                    "error_message": "strId_92",
+                    "modifier_class": "half-width"
+                },
+                {
+                    "name": "last_name",
+                    "type": "text",
+                    "validators": ["required"],
+                    "question": "strId_93",
+                    "error_message": "strId_94",
+                    "modifier_class": "half-width"
+                },
+                {
+                    "name": "email",
+                    "type": "text",
+                    "subtype": "email",
+                    "validators": ["required", "email"],
+                    "question": "strId_95",
+                    "error_message": "strId_96",
+                    "error_message_email": "strId_97",
+                    "modifier_class": "half-width"
+                },
+                {
+                    "name": "phone_number",
+                    "type": "text",
+                    "subtype": "tel",
+                    "validators": ["required"],
+                    "question": "strId_98",
+                    "error_message": "strId_99",
+                    "modifier_class": "half-width"
+                },
+                {
+                    "name": "additional_info",
+                    "type": "textarea",
+                    "validators": null,
+                    "question": "strId_100",
+                    "hint": "strId_101",
+                    "modifier_class": "full-width"
+                },
+                {
+                    "name": "tos_signoff",
+                    "type": "checkbox",
+                    "validators": ["requiredTrue"],
+                    "question": "strId_102",
+                    "error_message": "strId_103"
+                },
+                {
+                    "type": "button",
+                    "subtype": "submit",
+                    "style": "mat-raised-button",
+                    "color": "primary",
+                    "value": "strId_104"
+                }
+            ]
+        },
+        {
+            "footer": {
+                "terms": "strId_105",
+                "privacy": "strId_106",
+                "rights": "strId_107"
+            }
+        }
+    ]
